@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="panel">
+    <p-panel styleClass="header-panel" header="{{title}}">
+
+      <input type="text" pInputText placeholder="Add TODO" [(ngModel)]="addToDo" />
+      <p-button styleClass="add-btn" icon="pi pi-plus" [rounded]="true" (onClick)="addButton()"></p-button>
+
+      <div class="toDoCard" *ngIf="showTodo">
+        <p-card *ngFor="let todo of listToDo; let i = index">
+          <h2>{{todo}}</h2>
+          <p-button styleClass="btnTODO" icon="pi pi-trash" size="small" (onClick)="deleteButton(i)"></p-button>
+        </p-card>
+      </div>
+
+    </p-panel>
+  </div>
+</div>
